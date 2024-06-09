@@ -1,4 +1,5 @@
 import LeftSideBar from '@/components/LeftSideBar';
+import Image from 'next/image';
 
 export default function RootLayout({
 	children,
@@ -6,12 +7,22 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<div>
-			<main>
-				<p className='text-white-1'>
-					<LeftSideBar />
-				</p>
-				{children}
+		<div className='relative flex flex-col '>
+			<main className='relative flex bg-black-3 '>
+				<LeftSideBar />
+				<section>
+					<div>
+						<div>
+							{/* <Image /> */}
+							{/* mobile nav */}
+						</div>
+						<div>
+							{/* Toaster notification popoups */}
+							{children}
+						</div>
+					</div>
+				</section>
+
 				<p className='text-white-1'>RIGHT SIDEBAR</p>
 			</main>
 		</div>
