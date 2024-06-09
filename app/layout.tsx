@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Recursive } from 'next/font/google';
 import './globals.css';
+import ConvexClientProvider from './providers/ConvexProvider';
 
 const recursive = Recursive({ subsets: ['latin'] });
 
@@ -19,7 +20,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body className={recursive.className}>{children}</body>
+			<body className={recursive.className}>
+				<ConvexClientProvider>{children}</ConvexClientProvider>
+			</body>
 		</html>
 	);
 }
